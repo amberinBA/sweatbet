@@ -16,12 +16,19 @@ SweatBet is a Farcaster Mini App where groups can bet on completing workout chal
 ## 🛠️ Tech Stack
 
 - **Frontend**: Next.js 14 (App Router) + TypeScript + Tailwind CSS
-- **Wallet**: Farcaster Mini App SDK + wagmi + viem
+- **Wallet**: Farcaster Frame SDK + wagmi + viem + OnchainKit
 - **Messaging**: XMTP React SDK (full group chat)
-- **Blockchain**: Celo (Alfajores testnet + Mainnet)
+- **Blockchain**: Celo Sepolia (testnet) + Celo Mainnet
 - **Proofs**: VLayer Web Prover (TLSNotary)
 - **Social**: Neynar API (username → address resolution)
 - **Fitness**: Strava OAuth v3
+
+## 🎉 Deployed Version
+
+- **Live App**: https://sweatbet-sigma.vercel.app
+- **Contract (Sepolia)**: `0xFe225414c1288CC0678806fC1B358a99b1317b83`
+- **USDC (Sepolia)**: `0x01C5C0122039549AD1493B8220cABEdD739BC44E`
+- **GitHub**: https://github.com/amberinBA/sweatbet
 
 ## 📦 Quick Start
 

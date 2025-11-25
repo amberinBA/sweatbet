@@ -113,8 +113,24 @@ export function parseCUSD(amount: string): bigint {
  * Get contract addresses based on chain
  */
 export function getContractAddresses(chainId: number) {
-  const isSepolia = chainId === 44787; // Celo Sepolia/Alfajores chain ID
-  
+  // Celo Sepolia/Alfajores = 44787
+  // Celo Mainnet = 42220
+
+  if (chainId === 44787) {
+    // Celo Sepolia
+    return {
+      escrow: (process.env.NEXT_PUBLIC_ESCROW_CONTRACT_SEPOLIA as `0x${string}`),
+      cUSD: (process.env.NEXT_PUBLIC_CUSD_SEPOLIA as `0x${string}`),
+    };
+  } else if (chainId === 42220) {
+    // Celo Mainnet
+    return {
+      escrow: (process.env.NEXT_PUBLIC_ESCROW_CONTRACT_MAINNET as `0x${string}`),
+      cUSD: (process.env.NEXT_PUBLIC_CUSD_MAINNET as `0x${string}`),
+    };
+  }
+
+  // Default to Sepolia
   return {
     escrow: (process.env.NEXT_PUBLIC_ESCROW_CONTRACT_SEPOLIA as `0x${string}`),
     cUSD: (process.env.NEXT_PUBLIC_CUSD_SEPOLIA as `0x${string}`),

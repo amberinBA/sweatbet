@@ -1,16 +1,16 @@
 {
   "accountAssociation": {
     "header": "eyJmaWQiOjEyMzQ1LCJ0eXBlIjoiY3VzdG9keSIsImtleSI6IjB4MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMCJ9",
-    "payload": "eyJkb21haW4iOiJzd2VhdGJldC5hcHAifQ",
+    "payload": "eyJkb21haW4iOiJzd2VhdGJldC1zaWdtYS52ZXJjZWxhcHAuY29tIn0",
     "signature": "MHhmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZm"
   },
   "frame": {
     "version": "1",
     "name": "SweatBet",
-    "iconUrl": "https://sweatbet.app/icon.png",
-    "splashImageUrl": "https://sweatbet.app/splash.png",
-    "splashBackgroundColor": "#9333ea",
-    "homeUrl": "https://sweatbet.app",
-    "webhookUrl": "https://sweatbet.app/api/webhook"
+    "iconUrl": "https://sweatbet-sigma.vercel.app/icon.png",
+    "splashImageUrl": "https://sweatbet-sigma.vercel.app/splash.png",
+    "splashBackgroundColor": "#8B5CF6",
+    "homeUrl": "https://sweatbet-sigma.vercel.app",
+    "webhookUrl": "https://sweatbet-sigma.vercel.app/api/webhook"
   }
 }

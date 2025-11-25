@@ -48,17 +48,44 @@ export function getStravaAuthUrl(state?: string): string {
  */
 export async function exchangeStravaCode(code: string): Promise<string> {
   try {
-    const response = await axios.post('https://www.strava.com/oauth/token', {
+    if (!STRAVA_CLIENT_SECRET) {
+      throw new Error('STRAVA_CLIENT_SECRET is not configured');
+    }
+
+    console.log('Exchanging Strava code for token...', {
       client_id: STRAVA_CLIENT_ID,
-      client_secret: STRAVA_CLIENT_SECRET,
-      code,
-      grant_type: 'authorization_code',
+      code: code.substring(0, 10) + '...',
     });
-    
+
+    const response = await axios.post(
+      'https://www.strava.com/oauth/token',
+      {
+        client_id: STRAVA_CLIENT_ID,
+        client_secret: STRAVA_CLIENT_SECRET,
+        code,
+        grant_type: 'authorization_code',
+      },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+
+    console.log('Strava token exchange successful');
     return response.data.access_token;
-  } catch (error) {
-    console.error('Error exchanging Strava code:', error);
-    throw new Error('Failed to authenticate with Strava');
+  } catch (error: any) {
+    console.error('Error exchanging Strava code:', {
+      message: error.message,
+      response: error.response?.data,
+      status: error.response?.status,
+    });
+
+    if (error.response?.data?.message) {
+      throw new Error(`Strava error: ${error.response.data.message}`);
+    }
+
+    throw new Error('Failed to authenticate with Strava. Please check your client secret.');
   }
 }
 

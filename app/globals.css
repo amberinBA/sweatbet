@@ -5,7 +5,11 @@
 @layer base {
   body {
     @apply bg-gradient-to-br from-sweat-purple to-sweat-pink;
-    font-family: var(--font-inter);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-inter {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
 
